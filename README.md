@@ -6,6 +6,9 @@
 ### Technology to include:
 - React
 - Sequelize
+- Sequelize-cli
+- React-router
+- Axios
 - Mysql
 - Bootstrap
 - Express
@@ -17,3 +20,4 @@
 - Map api
 - Github repository
 
+### Front End
