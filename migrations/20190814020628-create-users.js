@@ -32,12 +32,6 @@ module.exports = {
       vendor_website_url: {
         type: Sequelize.STRING
       },
-      time_for_pickup: {
-        type: Sequelize.STRING
-      },
-      pickup_area_name: {
-        type: Sequelize.STRING
-      },
       employer_name: {
         type: Sequelize.STRING
       },
