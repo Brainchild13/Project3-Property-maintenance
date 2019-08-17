@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         item5: DataTypes.STRING,
         item5: DataTypes.STRING,
         comments_feedback: DataTypes.STRING,
+        cleanliness_rating_tenant: DataTypes.STRING,
         overall_job_rating_tenant: DataTypes.STRING,
         cleanliness_rating_supervisor: DataTypes.STRING,
         overall_job_rating_supervisor: DataTypes.STRING

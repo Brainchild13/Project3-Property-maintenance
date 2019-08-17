@@ -1,7 +1,7 @@
 USE property_manager;
 
 INSERT INTO user_types
-    (name, createdAt, updatedAt)
+    (type_name, createdAt, updatedAt)
 VALUES
     ("Tenant", "7-9-19", "7-9-19");
 
