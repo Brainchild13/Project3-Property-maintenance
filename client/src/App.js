@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarIndex from './components/NavBar/NavBarIndex';
 import './App.css';
 import Registration from './components/Registration/Registration';
+import RequestApp from './components/RequestForm/RequestApp';
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import Discover from './pages/Discover';
 // import About from './pages/About';
@@ -16,7 +17,13 @@ function App() {
     <div>
       <NavBarIndex />
       <Wrapper>
-        <h1 className="headz">Test</h1>
+        <center>
+          <h1 className="headz">Request Form</h1>
+        </center>
+        <RequestApp />
+        <center>
+          <h1 className="headz">Login and Registration Forms</h1>
+        </center>
         <Login />
         <Registration />
         {/* <Route exact path="/" component={About} /> */}
