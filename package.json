@@ -4,6 +4,7 @@
   "description": "``` To create a property management application that will reduce communications between tenants and managers, while optimizing time/cost benefits for property owners and management while seeing accurate analytics regarding time from tenant request to request completion.```",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,9 +24,7 @@
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
     "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
-    "react": "^16.9.0",
-    "react-router": "^5.0.1",
+    "mysql2": "^1.6.5",
     "sequelize": "^5.13.1",
     "sequelize-cli": "^5.5.0"
   }
