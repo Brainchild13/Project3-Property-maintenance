@@ -1,35 +1,23 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
-
-// Dependencies
-var Sequelize = require("sequelize");
-var mysql = require("mysql2");
-require("dotenv").config();
-
-//Connection to heroku Jawsdb
-// if (process.env.JAWSDB_URL) {
-//   RTCPeerConnection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: process.env.LOCALDB,
-    database: "property_manager",    
-    insecureAuth: true
-  });
-// }
-
-connection.connect(function(err) {
+var Sequelize = require('sequelize');
+var sequelize;
+sequelize = new Sequelize(<Database Name>, <MySql UserName>,<MySql Password>,
+{
+  host: 'localhost', 
+  dialect: 'mysql' // You can change this as per your //database
+}, 
+{
+   sync: true,
+   forceSync: false // Keep this false for safer use.
+});
+//To test mysql connection
+sequelize.authenticate().then(function (err) {
   if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
+    console.error('Unable to connect to the database:', err);
+  } else {
+     sequelize.sync();
+     console.log('Connection has been established successfully.');
   }
-  console.log("connected as id " + connection.threadId);
 });
 
-connection.connect();
-module.exports = connection;
-
-// Exports the connection for other files to use
-module.exports = sequelize;
+module.exports.sequelize = sequelize;
+module.exports.Sequelize = Sequelize;
