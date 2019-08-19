@@ -10,12 +10,12 @@ function Registration(props) {
           <h2 class="text-center">
             <strong>Create</strong> an account.
           </h2>
-          <div class="form-group">
+          <div class="form-group1">
             <input
               class="form-control2"
               type="first_name"
               name="first_name"
-              placeholder="first_name"
+              placeholder="First Name"
             />
             <input
               class="form-control2"
@@ -24,7 +24,7 @@ function Registration(props) {
               placeholder="Last Name"
             />
           </div>
-          <div class="form-group">
+          <div class="form-group1">
             <select class="form-control3" name="user_address">
               <option value="">Select Address</option>
               <option value="1717 E Walnut Ave">
@@ -47,7 +47,7 @@ function Registration(props) {
               placeholder="Unit #"
             />
           </div>
-          {/* <div class="form-group">
+          {/* <div class="form-group1">
             <input
               class="form-control4"
               type="tenant_unit_number"
@@ -55,7 +55,7 @@ function Registration(props) {
               placeholder="Unit #"
             />
           </div> */}
-          <div class="form-group">
+          <div class="form-group1">
             <input
               class="form-control"
               type="user_email"
@@ -63,7 +63,7 @@ function Registration(props) {
               placeholder="Email"
             />
           </div>
-          <div class="form-group">
+          <div class="form-group1">
             <input
               class="form-control"
               type="password"
@@ -71,7 +71,7 @@ function Registration(props) {
               placeholder="Password"
             />
           </div>
-          <div class="form-group">
+          <div class="form-group1">
             <input
               class="form-control"
               type="password"
@@ -79,7 +79,7 @@ function Registration(props) {
               placeholder="Password (repeat)"
             />
           </div>
-          <div class="form-group">
+          <div class="form-group1">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" />I agree to the
@@ -87,7 +87,7 @@ function Registration(props) {
               </label>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group1">
             <button class="btn btn-primary btn-block" type="submit">
               Sign Up
             </button>

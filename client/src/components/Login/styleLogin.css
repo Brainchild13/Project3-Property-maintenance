@@ -7,7 +7,7 @@
 }
 
 .login-clean form {
-  max-width: 400px;
+  max-width: 440px;
   width: 90%;
   margin: 0 auto;
   background-color: #ffffff;
@@ -34,9 +34,10 @@
 
 .login-clean form .form-control {
   background: #f7f9fc;
-  width: 400px;
+  width: 100%;
   border: none;
-  border-bottom: 1px solid #dfe7f1;
+  border: 1px solid #d7ddff;
+  margin-top: 2px;
   border-radius: 0;
   box-shadow: none;
   outline: none;
