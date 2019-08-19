@@ -12,9 +12,11 @@ export default class Login extends Component {
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
-
-  componentDidMount() {
+  async componentDidMount() {
     // any data fetching from the db should be done here
+    // const { data } = await axios.get('some/api/route');
+    // this.setState({ issues: data.issues })
+
   }
 
   onChangeHandler = event => {
@@ -44,7 +46,7 @@ export default class Login extends Component {
           {/* <div className="illustration">
             <i className="icon ion-ios-navigate" />
           </div> */}
-          <div className="form-group">
+          <div className="form-group1">
             <input
               className="form-control"
               type="email"
@@ -77,42 +79,3 @@ export default class Login extends Component {
     );
   }
 }
-
-// function Login(props) {
-//   return (
-//     <div className="login-clean">
-//       <form method="post">
-//         <h2 className="sr-only">Login Form</h2>
-//         {/* <div className="illustration">
-//           <i className="icon ion-ios-navigate" />
-//         </div> */}
-//         <div className="form-group">
-//           <input
-//             className="form-control"
-//             type="email"
-//             name="email"
-//             placeholder="Email"
-//           />
-//         </div>
-//         <div className="form-group">
-//           <input
-//             className="form-control"
-//             type="password"
-//             name="password"
-//             placeholder="Password"
-//           />
-//         </div>
-//         <div className="form-group">
-//           <button className="btn btn-primary btn-block" type="submit">
-//             Log In
-//           </button>
-//         </div>
-//         <a className="forgot" href="#">
-//           Forgot your email or password?
-//         </a>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Login;
