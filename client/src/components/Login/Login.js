@@ -12,11 +12,11 @@ export default class Login extends Component {
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
-
   async componentDidMount() {
     // any data fetching from the db should be done here
     // const { data } = await axios.get('some/api/route');
     // this.setState({ issues: data.issues })
+
   }
 
   onChangeHandler = event => {

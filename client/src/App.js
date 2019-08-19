@@ -24,6 +24,7 @@ function App() {
         <center>
           <h1 className="headz">Login and Registration Forms</h1>
         </center>
+
         <Login />
         <Registration />
         {/* <Route exact path="/" component={About} /> */}
