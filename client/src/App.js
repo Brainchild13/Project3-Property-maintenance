@@ -3,6 +3,7 @@ import NavBarIndex from './components/NavBar/NavBarIndex';
 import './App.css';
 import Registration from './components/Registration/Registration';
 import RequestApp from './components/RequestForm/RequestApp';
+import IssueForm from './components/IssuePage/IssueForm';
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import Discover from './pages/Discover';
 // import About from './pages/About';
@@ -17,6 +18,10 @@ function App() {
     <div>
       <NavBarIndex />
       <Wrapper>
+        <center>
+          <h1 className="headz">Issue Page</h1>
+        </center>
+        <IssueForm />
         <center>
           <h1 className="headz">Request Form</h1>
         </center>
