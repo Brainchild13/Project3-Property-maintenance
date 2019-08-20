@@ -26,7 +26,18 @@ module.exports = (sequelize, DataTypes) => {
       cleanliness_rating_tenant: DataTypes.STRING,
       overall_job_rating_tenant: DataTypes.STRING,
       cleanliness_rating_supervisor: DataTypes.STRING,
-      overall_job_rating_supervisor: DataTypes.STRING
+      overall_job_rating_supervisor: DataTypes.STRING,
+
+      //needed to this to issue # to be updated later
+      issue_number: DataTypes.STRING,
+      //No sure if this is the place the info gets added
+      tenant_comment: DataTypes.STRING,
+      tenant_work_rating: DataTypes.STRING,
+      tenant_cleanliness_rating: DataTypes.STRING,
+      manager_comment: DataTypes.STRING,
+      manager_work_rating: DataTypes.STRING,
+      manager_cleanliness_rating: DataTypes.STRING,
+      completion_date: DataTypes.STRING
     },
     {}
   );
