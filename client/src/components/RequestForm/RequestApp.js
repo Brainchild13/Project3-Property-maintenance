@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styleReq.css';
 
-export default class Login extends Component {
+export default class RequestApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +54,7 @@ export default class Login extends Component {
     return (
       <div className="request-maintenance">
         <form onSubmit={this.onSubmitHandler}>
-          <h2>Maintenance Request Form</h2>
+          <h2>Maintenance Req Form</h2>
           {/* <div>Name Address Unit</div> */}
           <div className="form-group">
             <select
