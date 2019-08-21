@@ -11,5 +11,7 @@
   left: 0;
   right: 0;
   padding: 20px;
-  background: #b8b8b8;
+  background: rgb(31, 138, 187);
+  color: white;
+  z-index: 5;
 }

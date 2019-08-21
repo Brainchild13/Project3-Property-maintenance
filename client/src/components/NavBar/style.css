@@ -1,7 +1,7 @@
 .navbar {
   margin-top: 0px;
   overflow: hidden;
-  background-color: #5133a4;
+  background-color: rgb(31, 138, 187);
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,7 @@
   font-size: 30px;
   font-family: sans-serif;
   text-align: center;
+  z-index: 5;
 }
 
 .navbar a {
