@@ -109,15 +109,15 @@ export default class Login extends Component {
             {/* <br /> */}
             <input
               className="form-control"
-              type="item1"
-              name="item1"
+              type="text"
+              name="tenant_comment"
               placeholder="Tenant Comment Here"
               onChange={this.onChangeHandler}
               value={this.state.item1}
             />
             <select
               className="form-control4"
-              name="item1_category"
+              name="tenant_work_rating"
               onChange={this.onChangeHandler}
               value={this.state.item1_category}
             >
@@ -135,7 +135,7 @@ export default class Login extends Component {
             </select>
             <select
               className="form-control4"
-              name="item1_category"
+              name="tenant_cleanliness_rating"
               onChange={this.onChangeHandler}
               value={this.state.item1_category}
             >
@@ -151,20 +151,23 @@ export default class Login extends Component {
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
+            <button className="btn btn-primary btn-block" type="submit">
+              Submit Request
+            </button>
           </div>
           <div className="form-group">
             <b>Manager Comment</b>
             <input
               className="form-control"
-              type="item1"
-              name="item1"
+              type="text"
+              name="manager_comment"
               placeholder="Manager Comment Here"
               onChange={this.onChangeHandler}
               value={this.state.item1}
             />
             <select
               className="form-control8"
-              name="item1_category"
+              name="manager_work_rating"
               onChange={this.onChangeHandler}
               value={this.state.item1_category}
             >
@@ -182,7 +185,7 @@ export default class Login extends Component {
             </select>
             <select
               className="form-control9"
-              name="item1_category"
+              name="manager_cleanliness_rating"
               onChange={this.onChangeHandler}
               value={this.state.item1_category}
             >
@@ -201,7 +204,7 @@ export default class Login extends Component {
             <input
               className="form-control10"
               type="date"
-              name="test"
+              name="completion_date"
               placeholder="Date Completed"
               onChange={this.onChangeHandler}
               value={this.state.item1}

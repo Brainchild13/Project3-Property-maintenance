@@ -47,7 +47,7 @@ export default class Registration extends Component {
       //   return (
       <div className="sign-up">
         <div class="form-container">
-          <div class="image-holder" />
+          {/* <div class="image-holder" /> */}
           <form method="post">
             <h2 class="text-center">
               <strong>Create</strong> an account.
@@ -55,7 +55,7 @@ export default class Registration extends Component {
             <div class="form-group1">
               <input
                 class="form-control2"
-                type="first_name"
+                type="text"
                 name="first_name"
                 placeholder="First Name"
                 onChange={this.onChangeHandler}
@@ -63,7 +63,7 @@ export default class Registration extends Component {
               />
               <input
                 class="form-control2"
-                type="last_name"
+                type="text"
                 name="last_name"
                 placeholder="Last Name"
               />
@@ -86,7 +86,7 @@ export default class Registration extends Component {
               </select>
               <input
                 class="form-control4"
-                type="tenant_unit_number"
+                type="text"
                 name="tenant_unit_number"
                 placeholder="Unit #"
                 onChange={this.onChangeHandler}
@@ -104,7 +104,7 @@ export default class Registration extends Component {
             <div class="form-group1">
               <input
                 class="form-control"
-                type="user_email"
+                type="text"
                 name="user_email"
                 placeholder="Email"
                 onChange={this.onChangeHandler}
@@ -114,7 +114,7 @@ export default class Registration extends Component {
             <div class="form-group1">
               <input
                 class="form-control"
-                type="password"
+                type="text"
                 name="password"
                 placeholder="Password"
                 onChange={this.onChangeHandler}
@@ -124,7 +124,7 @@ export default class Registration extends Component {
             <div class="form-group1">
               <input
                 class="form-control"
-                type="password"
+                type="text"
                 name="password-repeat"
                 placeholder="Password (repeat)"
               />
