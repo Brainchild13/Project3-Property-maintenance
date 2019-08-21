@@ -74,7 +74,7 @@ export default class RequestApp extends Component {
             </select>
             <input
               className="form-control2"
-              type="item1"
+              type="text"
               name="item1"
               placeholder="Issue #1"
               onChange={this.onChangeHandler}
@@ -99,7 +99,7 @@ export default class RequestApp extends Component {
             </select>
             <input
               className="form-control2"
-              type="item2"
+              type="text"
               name="item2"
               placeholder="Issue #2"
               onChange={this.onChangeHandler}
@@ -123,7 +123,7 @@ export default class RequestApp extends Component {
               </select>
               <input
                 className="form-control2"
-                type="item3"
+                type="text"
                 name="item3"
                 placeholder="Issue #3"
                 onChange={this.onChangeHandler}
@@ -148,7 +148,7 @@ export default class RequestApp extends Component {
               </select>
               <input
                 className="form-control2"
-                type="item4"
+                type="text"
                 name="item4"
                 placeholder="Issue #4"
                 onChange={this.onChangeHandler}
