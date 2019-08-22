@@ -31,6 +31,7 @@
   padding: 0 0 20px;
   font-size: 100px;
   color: rgb(244, 71, 107);
+  /* color: rgb(31, 138, 187); */
 }
 
 /* 1 input line */
@@ -40,7 +41,7 @@
   width: 100%;
   border: none;
   /* border-bottom: 1px solid rebeccapurple; */
-  border: 1px solid #435efa;
+  border: 1px solid #aab7ff;
   border-radius: 0;
   box-shadow: none;
   outline: none;
@@ -50,11 +51,11 @@
 }
 
 /* 3 inputs per line - Isuue, Date Assigned, Maintenance Man Dropdown */
-.issue-form .form-control7 {
+.issue-form .form-control5 {
   background: #f7f9fc;
   margin-top: 2px;
   /* width: 90px; */
-  width: 30%;
+  width: 25%;
   border: none;
   /* border-bottom: 1px solid #dfe7f1; */
   border: 1px solid #aab7ff;
@@ -70,6 +71,40 @@
   background: #f7f9fc;
   margin-top: 2px;
   /* width: 90px; */
+  width: 34%;
+  border: none;
+  /* border-bottom: 1px solid #dfe7f1; */
+  border: 1px solid #aab7ff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 40px;
+}
+
+.issue-form .form-control7 {
+  background: #f7f9fc;
+  margin-top: 2px;
+  /* width: 90px; */
+  width: 41%;
+  border: none;
+  /* border-bottom: 1px solid #dfe7f1; */
+  border: 1px solid #aab7ff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 6px;
+  height: 40px;
+}
+/* END 3 inputs per line - Isuue, Date Assigned, Maintenance Man Dropdown */
+
+/* 3 inputs per line Manager Section - Work, Clean, Date Comp */
+.issue-form .form-control8 {
+  background: #f7f9fc;
+  margin-top: 2px;
+  /* width: 90px; */
   width: 30%;
   border: none;
   /* border-bottom: 1px solid #dfe7f1; */
@@ -78,15 +113,15 @@
   box-shadow: none;
   outline: none;
   color: inherit;
-  text-indent: 8px;
+  text-indent: 4px;
   height: 40px;
 }
 
-.issue-form .form-control5 {
+.issue-form .form-control9 {
   background: #f7f9fc;
   margin-top: 2px;
   /* width: 90px; */
-  width: 40%;
+  width: 31%;
   border: none;
   /* border-bottom: 1px solid #dfe7f1; */
   border: 1px solid #aab7ff;
@@ -94,7 +129,23 @@
   box-shadow: none;
   outline: none;
   color: inherit;
-  text-indent: 8px;
+  text-indent: 4px;
+  height: 40px;
+}
+
+.issue-form .form-control10 {
+  background: #f7f9fc;
+  margin-top: 2px;
+  /* width: 90px; */
+  width: 39%;
+  border: none;
+  /* border-bottom: 1px solid #dfe7f1; */
+  border: 1px solid #aab7ff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 2px;
   height: 40px;
 }
 /* END 3 inputs per line - Isuue, Date Assigned, Maintenance Man Dropdown */
@@ -103,6 +154,7 @@
 .issue-form .form-control4 {
   background: #f7f9fc;
   margin-top: 2px;
+  margin-bottom: 6px;
   /* width: 90px; */
   width: 50%;
   border: none;
@@ -149,7 +201,7 @@
 /* Upload Image Button */
 .issue-form form .btn-primary-img {
   color: white;
-  background: #435efa;
+  background: rgb(31, 138, 187);
   border: none;
   border-radius: 4px;
   padding: 11px;
@@ -162,7 +214,7 @@
 .issue-form form .btn-primary-img2 {
   font-size: 14px;
   color: white;
-  background: #435efa;
+  background: rgb(31, 138, 187);
   border: none;
   padding: 11px;
   /* border-radius: 4px;
@@ -179,7 +231,7 @@
 .input-group-text,
 .custom-file-label::after {
   color: white;
-  background: #435efa;
+  background: rgb(31, 138, 187);
 }
 
 .mb-3 {
