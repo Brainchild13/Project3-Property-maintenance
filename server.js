@@ -49,7 +49,6 @@ require("./routes/requests_routes.js")(app);
 require("./routes/status_categories_routes.js")(app);
 require("./routes/user_types_routes.js")(app);
 require("./routes/users_routes.js")(app);
-// console.log('routes');
 
 //Lisening to the PORT
 //======================================
