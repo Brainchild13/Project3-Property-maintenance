@@ -1,22 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBarIndex from './components/NavBar/NavBarIndex';
 import './App.css';
 import Registration from './components/Registration/Registration';
 import RequestApp from './components/RequestForm/RequestApp';
 import IssueForm from './components/IssuePage/IssueForm';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import Discover from './pages/Discover';
-// import About from './pages/About';
-// import Search from './pages/Search';
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
-import Wrapper from './components/Wrapper/Wrapper';
+// import Wrapper from './components/Wrapper/Wrapper';
 
 function App() {
   return (
     // <Router>
     <div>
-      <NavBarIndex />
+      <Router>
+        <NavBarIndex />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/Registration" component={Registration} />
+        <Route exact path="/Request" component={RequestApp} />
+        <Route exact path="/Issue" component={IssueForm} />
+        {/* <Route exact path="/Supervisor" component={Supervisor} /> */}
+      </Router>
+      {/* <NavBarIndex />
       <Wrapper>
         <center>
           <h1 className="headz">Issue Page</h1>
@@ -32,11 +37,7 @@ function App() {
 
         <Login />
         <Registration />
-        {/* <Route exact path="/" component={About} /> */}
-        {/* <Route exact path="/about" component={About} /> */}
-        {/* <Route exact path="/discover" component={Discover} /> */}
-        {/* <Route exact path="/search" component={Search} /> */}
-      </Wrapper>
+      </Wrapper> */}
       <Footer />
     </div>
     // </Router>
