@@ -3,19 +3,16 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.get("/api/requests", function(req, res) {
-        db.Requests.findAll({
-            include: [db.post]
-        }).then(function(dbRequests){
+        db.Requests.findAll({}).then(function(dbRequests){
             res.json(dbRequests);
         });
     });
 
-    app.get("api/requests/:id", function (res, req){
+    app.get("/api/requests/:id", function (req, res){
         db.Requests.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Post]
         }).then(function(dbRequests){
             res.json(dbRequests);
         });

@@ -3,26 +3,23 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.get("/api/issue_categories", function(req, res) {
-        db.Issue_categories.findAll({
-            include: [db.post]
-        }).then(function(dbIssue_categories){
+        db.Issue_categories.findAll({}).then(function(dbIssue_categories){
             res.json(dbIssue_categories);
         });
     });
 
-    app.get("api/issue_categories/:id", function (res, req){
+    app.get("/api/issue_categories/:id", function (req, res){
         db.Issue_categories.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Post]
         }).then(function(dbIssue_categories){
             res.json(dbIssue_categories);
         });
     });
 
     app.post("/api/issue_categories", function(req, res) {
-        db.Issue_categories.create(req,body).then(function(dbIssue_categories){
+        db.Issue_categories.create(req.body).then(function(dbIssue_categories){
             res.json(dbIssue_categories);
         });
     });
