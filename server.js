@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 8080;
 
 //Middleware
 //======================================
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 // body parser 8-21-19
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
@@ -41,15 +41,15 @@ app.use('/api', router);
 app.get('/', function (req, res) {
   return res.send({error: true, message: 'hello' })
 });
+
 //======================================
 require("./routes/issue_categories_routes.js")(app);
 require("./routes/issues_routes.js")(app);
 require("./routes/locations_routes.js")(app);
-require("./routes/requests.js")(app);
+require("./routes/requests_routes.js")(app);
 require("./routes/status_categories_routes.js")(app);
 require("./routes/user_types_routes.js")(app);
 require("./routes/users_routes.js")(app);
-// console.log('routes');
 
 //Lisening to the PORT
 //======================================
@@ -59,5 +59,4 @@ db.sequelize.sync().then(function () {
   });
 });
 
-// export the app 8-19-19
 module.exports = app;

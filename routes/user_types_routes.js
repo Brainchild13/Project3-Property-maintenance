@@ -4,18 +4,16 @@ var db = require("../models");
 module.exports = function(app) {
     app.get("/api/user_types", function(req, res) {
         db.User_types.findAll({
-            include: [db.post]
         }).then(function(dbUser_types){
             res.json(dbUser_types);
         });
     });
 
-    app.get("api/user_types/:id", function (res, req){
+    app.get("/api/user_types/:id", function (res, req){
         db.User_types.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Post]
         }).then(function(dbUser_types){
             res.json(dbUser_types);
         });

@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     tenant_unit_number: DataTypes.STRING,
     employer_name: DataTypes.STRING,
     pets: DataTypes.BOOLEAN
-  }, {});
-  Users.associate = function(models) {
-    // associations can be defined here
-  };
+  });
   return Users;
 };

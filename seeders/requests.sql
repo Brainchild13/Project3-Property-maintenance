@@ -13,5 +13,4 @@ VALUES
 INSERT INTO requests
     (request_number, work_order_number, request_date, date_approved, date_due, status, date_completed, assigned_to, allowed_to_enter, comments_feedback, item1, item1_category, cleanliness_rating_tenant, overall_job_rating_tenant, cleanliness_rating_supervisor, overall_job_rating_supervisor, createdAt, updatedAt)
 VALUES
-    ("58778", "45956", "11-21-18", "11-24-18", "11-26-18", "Complete", "11-27-18", "Ricky James", true, "Paint Peeling", "Patch-and-Paint", "The paint is peeling in my child's bedroom and i'm worried he is going to eat it", "65", "66", "68", "60", "7-9-19", "7-9-19");    
-
+    ("58778", "45956", "11-21-18", "11-24-18", "11-26-18", "Complete", "11-27-18", "Ricky James", true, "Paint Peeling", "Patch-and-Paint", "The paint is peeling in my child's bedroom and i'm worried he is going to eat it", "65", "66", "68", "60", "7-9-19", "7-9-19");
