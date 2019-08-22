@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styleReq.css';
 
-export default class Login extends Component {
+export default class RequestApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +33,8 @@ export default class Login extends Component {
 
   onChangeHandler = event => {
     console.log(event.target.name);
-    const { name } = event.target;
-    if (name === 'email') {
-      this.setState({ email: event.target.value });
-    } else {
-      this.setState({ password: event.target.value });
-    }
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
 
     // this.setState({ ...this.state, [name]: event.target.value })
   };
@@ -54,7 +50,7 @@ export default class Login extends Component {
     return (
       <div className="request-maintenance">
         <form onSubmit={this.onSubmitHandler}>
-          <h2>Maintenance Request Form</h2>
+          <h2>Maintenance Req Form</h2>
           {/* <div>Name Address Unit</div> */}
           <div className="form-group">
             <select
@@ -74,7 +70,7 @@ export default class Login extends Component {
             </select>
             <input
               className="form-control2"
-              type="item1"
+              type="text"
               name="item1"
               placeholder="Issue #1"
               onChange={this.onChangeHandler}
@@ -99,7 +95,7 @@ export default class Login extends Component {
             </select>
             <input
               className="form-control2"
-              type="item2"
+              type="text"
               name="item2"
               placeholder="Issue #2"
               onChange={this.onChangeHandler}
@@ -123,7 +119,7 @@ export default class Login extends Component {
               </select>
               <input
                 className="form-control2"
-                type="item3"
+                type="text"
                 name="item3"
                 placeholder="Issue #3"
                 onChange={this.onChangeHandler}
@@ -148,7 +144,7 @@ export default class Login extends Component {
               </select>
               <input
                 className="form-control2"
-                type="item4"
+                type="text"
                 name="item4"
                 placeholder="Issue #4"
                 onChange={this.onChangeHandler}
