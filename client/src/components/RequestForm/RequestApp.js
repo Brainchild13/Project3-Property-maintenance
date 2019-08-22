@@ -33,12 +33,8 @@ export default class RequestApp extends Component {
 
   onChangeHandler = event => {
     console.log(event.target.name);
-    const { name } = event.target;
-    if (name === 'email') {
-      this.setState({ email: event.target.value });
-    } else {
-      this.setState({ password: event.target.value });
-    }
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
 
     // this.setState({ ...this.state, [name]: event.target.value })
   };

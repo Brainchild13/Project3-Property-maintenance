@@ -5,14 +5,10 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      issue_name: '',
-      issue_description: '',
-      issue_category: '',
-      cost: '',
-      closeup_image: '',
-      zoom_out_image: '',
+      // closeup_image: '',
       completion_image_closeup_image: '',
       completion_image_zoom_out: '',
+      zoom_out_image: '',
       //needed to this to issue
       issue_number: '',
       //No sure if this is the place the info gets added
@@ -22,7 +18,9 @@ export default class Login extends Component {
       manager_comment: '',
       manager_work_rating: '',
       manager_cleanliness_rating: '',
-      completion_date: ''
+      date_approved: '',
+      completion_date: '',
+      assigned_to: ''
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -37,14 +35,8 @@ export default class Login extends Component {
 
   onChangeHandler = event => {
     console.log(event.target.name);
-    const { name } = event.target;
-    if (name === 'email') {
-      this.setState({ email: event.target.value });
-    } else {
-      this.setState({ password: event.target.value });
-    }
-
-    // this.setState({ ...this.state, [name]: event.target.value })
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   onSubmitHandler = event => {
@@ -59,41 +51,41 @@ export default class Login extends Component {
       <div className="issue-form">
         <form onSubmit={this.onSubmitHandler}>
           <h2>Issue Form</h2>
-          Tenant Name
-          here&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
+          Tenant Name here
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
           <br />
           1213 Venice Blvd., Los Angeles CA 90066
           <div className="form-group">
             <input
               className="form-control5"
               type="text"
-              name="item1"
+              name="issue_number"
               placeholder="Issue #"
               onChange={this.onChangeHandler}
-              value={this.state.item1}
+              value={this.state.issue_number}
             />
             <select
               className="form-control6"
-              name="item1_category"
+              name="assigned_to"
               onChange={this.onChangeHandler}
-              value={this.state.item1_category}
+              value={this.state.assigned_to}
             >
               <option value="">Maint Man</option>
-              <option value="Plumbing">Tom Jones</option>
-              <option value="Electric">Rick Berry</option>
-              <option value="Patch-and-paint">Michael Jackson</option>
-              <option value="Exterminator">Elvis Presley</option>
-              <option value="Locksmith">Billy Joel</option>
-              <option value="Cleaning">Herbie Hancock</option>
-              <option value="Landscaping-Tree-Trimming">Masta Ace</option>
+              <option value="Tom Jones">Tom Jones</option>
+              <option value="Rick Berry">Rick Berry</option>
+              <option value="Michael Jackson">Michael Jackson</option>
+              <option value="Elvis Presley">Elvis Presley</option>
+              <option value="Billy Joel">Billy Joel</option>
+              <option value="Herbie Hancock">Herbie Hancock</option>
+              <option value="Masta Ace">Masta Ace</option>
             </select>
             <input
               className="form-control7"
               type="date"
-              name="item1"
+              name="date_approved"
               placeholder="Date Assigned"
               onChange={this.onChangeHandler}
-              value={this.state.item1}
+              value={this.state.date_approved}
             />
           </div>
           Issue #1 feeds in here
@@ -113,13 +105,13 @@ export default class Login extends Component {
               name="tenant_comment"
               placeholder="Tenant Comment Here"
               onChange={this.onChangeHandler}
-              value={this.state.item1}
+              value={this.state.tenant_comment}
             />
             <select
               className="form-control4"
               name="tenant_work_rating"
               onChange={this.onChangeHandler}
-              value={this.state.item1_category}
+              value={this.state.tenant_work_rating}
             >
               <option value="">Work Rating</option>
               <option value="1">1</option>
@@ -137,7 +129,7 @@ export default class Login extends Component {
               className="form-control4"
               name="tenant_cleanliness_rating"
               onChange={this.onChangeHandler}
-              value={this.state.item1_category}
+              value={this.state.tenant_cleanliness_rating}
             >
               <option value="">Cleanliness Rating</option>
               <option value="1">1</option>
@@ -163,13 +155,13 @@ export default class Login extends Component {
               name="manager_comment"
               placeholder="Manager Comment Here"
               onChange={this.onChangeHandler}
-              value={this.state.item1}
+              value={this.state.manager_comment}
             />
             <select
               className="form-control8"
               name="manager_work_rating"
               onChange={this.onChangeHandler}
-              value={this.state.item1_category}
+              value={this.state.manager_work_rating}
             >
               <option value="">Work Rating</option>
               <option value="1">1</option>
@@ -187,7 +179,7 @@ export default class Login extends Component {
               className="form-control9"
               name="manager_cleanliness_rating"
               onChange={this.onChangeHandler}
-              value={this.state.item1_category}
+              value={this.state.manager_cleanliness_rating}
             >
               <option value="">Clean Rating</option>
               <option value="1">1</option>
@@ -207,7 +199,7 @@ export default class Login extends Component {
               name="completion_date"
               placeholder="Date Completed"
               onChange={this.onChangeHandler}
-              value={this.state.item1}
+              value={this.state.completion_date}
             />
           </div>
           <div className="form-group">
@@ -221,12 +213,30 @@ export default class Login extends Component {
                   type="file"
                   className="custom-file-input"
                   id="inputGroupFile01"
-                  name="closeup_image"
+                  name="completion_image_closeup_image"
                   onChange={this.onChangeHandler}
-                  value={this.state.closeup_image}
+                  value={this.state.completion_image_closeup_image}
                 />
                 <label className="custom-file-label" for="inputGroupFile01">
                   Select Close Up Image #1
+                </label>
+              </div>
+            </div>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Upload</span>
+              </div>
+              <div className="custom-file">
+                <input
+                  type="file"
+                  className="custom-file-input"
+                  id="inputGroupFile01"
+                  name="completion_image_zoom_out"
+                  onChange={this.onChangeHandler}
+                  value={this.state.completion_image_zoom_out}
+                />
+                <label className="custom-file-label" for="inputGroupFile01">
+                  Select Zoom Out Image #2
                 </label>
               </div>
             </div>
@@ -244,86 +254,14 @@ export default class Login extends Component {
                   value={this.state.zoom_out_image}
                 />
                 <label className="custom-file-label" for="inputGroupFile01">
-                  Select Zoom Out Image #2
-                </label>
-              </div>
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Upload</span>
-              </div>
-              <div className="custom-file">
-                <input
-                  type="file"
-                  className="custom-file-input"
-                  id="inputGroupFile01"
-                  name="closeup_image2"
-                  onChange={this.onChangeHandler}
-                  value={this.state.closeup_image2}
-                />
-                <label className="custom-file-label" for="inputGroupFile01">
                   Select Zoom Out Image #3
                 </label>
               </div>
             </div>
-            {/* <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Upload</span>
-              </div>
-              <div className="custom-file">
-                <input
-                  type="file"
-                  className="custom-file-input"
-                  id="inputGroupFile01"
-                  name="zoom_out_image2"
-                  onChange={this.onChangeHandler}
-                  value={this.state.zoom_out_image2}
-                />
-                <label className="custom-file-label" for="inputGroupFile01">
-                  Select Zoom Out Image #4
-                </label>
-              </div>
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Upload</span>
-              </div>
-              <div className="custom-file">
-                <input
-                  type="file"
-                  className="custom-file-input"
-                  id="inputGroupFile01"
-                  name="zoom_out_image3"
-                  onChange={this.onChangeHandler}
-                  value={this.state.zoom_out_image3}
-                />
-                <label className="custom-file-label" for="inputGroupFile01">
-                  Select Zoom Out Image #5
-                </label>
-              </div>
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Upload</span>
-              </div>
-              <div className="custom-file">
-                <input
-                  type="file"
-                  className="custom-file-input"
-                  id="inputGroupFile01"
-                  name="zoom_out_image4"
-                  onChange={this.onChangeHandler}
-                  value={this.state.zoom_out_image4}
-                />
-                <label className="custom-file-label" for="inputGroupFile01">
-                  Select Zoom Out Image #6
-                </label>
-              </div>
-            </div> */}
           </div>
           <div className="form-group">
             <button className="btn btn-primary btn-block" type="submit">
-              Submit Request
+              Submit Updates
             </button>
           </div>
         </form>
