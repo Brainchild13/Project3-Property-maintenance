@@ -60,3 +60,4 @@ db.sequelize.sync().then(function () {
 
 // export the app 8-19-19
 module.exports = app;
+// test
