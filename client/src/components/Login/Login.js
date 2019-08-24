@@ -71,7 +71,7 @@ export default class Login extends Component {
               Log In
             </button>
           </div>
-          <a className="forgot" href="#">
+          <a className="forgot" href="/">
             Forgot your email or password?
           </a>
         </form>
