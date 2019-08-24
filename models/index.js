@@ -33,4 +33,17 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+
+
+db.Issue_categories.belongsTo(db.Issues, { onDelete: 'CASCADE', allowNull: false } );
+db.Issues.hasOne(db.Issue_categories, { onDelete: 'CASCADE', allowNull: false } );
+db.Locations.hasMany(db.Users, {onDelete: 'CASCADE', allowNull: true } );
+// db.Users.hasOne(db.Locations, { onDelete: 'CASCADE', allowNull: true } );
+db.Users.hasMany(db.Requests, { onDelete: 'CASCADE', allowNull: true } );
+// db.Requests.belongTo(db.Users, { onDelete: 'CASCADE', allowNull: false } );
+db.Users.hasOne(db.User_types, { onDelete: 'CASCADE', allowNull: true } );
+db.User_types.belongsTo(db.Users, { onDelete: 'CASCADE', allowNull: false} );
+db.Status_categories.belongsTo(db.Requests, { onDelete: 'CASCADE', allowNull: false } );
+db.Requests.hasOne(db.Status_categories, {onDelete: 'CASCADE', allowNull: false } );
+
 module.exports = db;
