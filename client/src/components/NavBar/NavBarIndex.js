@@ -9,7 +9,7 @@ function NavBarIndex() {
       {/* <nav className="navbar navbar-expand-md navbar-light "> */}
       <nav className="navbar navbar-expand-md navbar-dark">
         <a className="navbar-brand" href="/">
-          <img className="navlogo" src="property-properly-logo-final.png" />
+          <img className="navlogo" alt="logo" src="property-properly-logo-final.png" />
         </a>
         <button
           className="navbar-toggler"
