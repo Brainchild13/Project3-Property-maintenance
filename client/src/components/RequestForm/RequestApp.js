@@ -19,7 +19,8 @@ export default class RequestApp extends Component {
       closeup_image2: '',
       zoom_out_image2: '',
       zoom_out_image3: '',
-      zoom_out_image4: ''
+      zoom_out_image4: '',
+      showForm: true
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -36,15 +37,44 @@ export default class RequestApp extends Component {
     console.log(event.target.name);
     const { name, value } = event.target;
     this.setState({ [name]: value });
-
-    // this.setState({ ...this.state, [name]: event.target.value })
   };
 
-  onSubmitHandler = event => {
+  onSubmitHandler = async event => {
     event.preventDefault();
     console.log(this.state);
 
-    // axios post with state data
+    try {
+      const {
+        item1_category,
+        item1,
+        item2_category,
+        item2,
+        item3_category,
+        item3,
+        item4_category,
+        item4
+      } = this.state;
+
+      const { data, status } = await axios.post(
+        'http://localhost:8080/api/requests',
+        {
+          item1_category,
+          item1,
+          item2_category,
+          item2,
+          item3_category,
+          item3,
+          item4_category,
+          item4
+        }
+      );
+
+      if (status === 2000) {
+        this.setState({ showForm: false });
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   render() {
@@ -53,6 +83,7 @@ export default class RequestApp extends Component {
         <form onSubmit={this.onSubmitHandler}>
           <h2>Maintenance Req Form</h2>
           {/* <div>Name Address Unit</div> */}
+          {/* {this.state.showForm ? ( */}
           <div className="form-group">
             <select
               className="form-control4"
@@ -263,6 +294,9 @@ export default class RequestApp extends Component {
               </div>
             </div>
           </div>
+          {/* ) : (
+            <h2>Your Request has been submitted</h2>
+          )} */}
           <div className="form-group">
             <button className="btn btn-primary btn-block" type="submit">
               Submit Request

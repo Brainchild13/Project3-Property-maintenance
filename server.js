@@ -2,6 +2,7 @@
 //=====================================
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const mysql = require('mysql2');
 const db = require('./models');
@@ -15,6 +16,8 @@ require('dotenv').config();
 //======================================
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
+
+app.use(cors());
 
 // body parser 8-21-19
 app.use(bodyParser.urlencoded({ extended: true }));
