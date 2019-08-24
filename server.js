@@ -52,11 +52,11 @@ require("./routes/users_routes.js")(app);
 
 //Lisening to the PORT
 //======================================
-db.sequelize.sync().then(function () {
-  app.listen(PORT, function () {
-    console.log("Listening on PORT: " + PORT);
-  });
-});
+// db.sequelize.sync().then(function () {
+//   app.listen(PORT, function () {
+//     console.log("Listening on PORT: " + PORT);
+//   });
+// });
 
 // export the app 8-19-19
 module.exports = app;
