@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "BAT",
+    "image": "./images/BAT.png",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "BTC",
+    "image": "./images/BTC.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "name": "Dent",
+    "image": "./images/dent.png",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "name": "Digibyte",
+    "image": "./images/Digibyte.png",
+    "clicked": false
+  }
+]

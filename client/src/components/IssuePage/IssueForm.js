@@ -51,10 +51,6 @@ export default class Login extends Component {
       <div className="issue-form">
         <form onSubmit={this.onSubmitHandler}>
           <h2>Issue Form</h2>
-          Tenant Name here
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
-          <br />
-          1213 Venice Blvd., Los Angeles CA 90066
           <div className="form-group">
             <input
               className="form-control5"
@@ -88,6 +84,11 @@ export default class Login extends Component {
               value={this.state.date_approved}
             />
           </div>
+          Tenant Name here
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
+          <br />
+          1213 Venice Blvd., Los Angeles CA 90066
+          <br />
           Issue #1 feeds in here
           <br />
           Issue #2 feeds in here
