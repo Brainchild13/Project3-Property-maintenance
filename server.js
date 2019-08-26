@@ -10,6 +10,8 @@ const db = require("./models");
 // Variable Port
 //======================================
 const PORT = process.env.PORT || 8080;
+// Adding in configureation details 8-26-19
+require('dotenv').config();
 
 //Middleware
 //======================================
