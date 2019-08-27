@@ -3,10 +3,9 @@
 
 .login-clean {
   background: #f1f7fc;
-  padding-top: 60px;
-  padding-bottom: 182px;
+  padding: 20px 0;
   /* Can remove this for formatting */
-  margin-top: 110px;
+  margin-top: 150px;
 }
 
 .login-clean form {
