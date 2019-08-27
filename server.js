@@ -4,14 +4,27 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+
 const mysql = require('mysql2');
 const db = require('./models');
+const path = require("path");
+
+// Added connection information 8-26-19
+// const connection = mysql.createConnection(process.env.JAWSDB_URL);s
+
+// connection.connect();
+// connection.query('SELECT * USERS', function(err, rows, fields) {
+//   if (err) throw err;
+
+//   console.log('lIST OF USERS: ', rows[0].solution);
+// });
 
 // Variable Port
 //======================================
 const PORT = process.env.PORT || 8080;
-
+// Adding in configureation details 8-26-19
 require('dotenv').config();
+
 //Middleware
 //======================================
 // app.use(express.urlencoded({ extended: true }));
