@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './styleIssue.css';
+// import { URL } from '../config/env'
 
 export default class Login extends Component {
   constructor(props) {
@@ -20,17 +22,34 @@ export default class Login extends Component {
       manager_cleanliness_rating: '',
       date_approved: '',
       completion_date: '',
-      assigned_to: ''
+      assigned_to: '',
+      showForm: true,
+      issuesFromDB: []
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     // any data fetching from the db should be done here
     // const { data } = await axios.get('some/api/route');
     // this.setState({ issues: data.issues })
+
+    const fetchIssues = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:8080/api/issues');
+
+        if (data) {
+          console.log(data);
+          this.setState({ issuesFromDB: data });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchIssues();
   }
 
   onChangeHandler = event => {
@@ -39,11 +58,40 @@ export default class Login extends Component {
     this.setState({ [name]: value });
   };
 
-  onSubmitHandler = event => {
+  onSubmitHandler = async event => {
     event.preventDefault();
     console.log(this.state);
 
-    // axios post with state data
+    try {
+      const {
+        assigned_to,
+        date_approved,
+        tenant_comment,
+        tenant_work_rating,
+        tenant_cleanliness_rating,
+        issue_number
+      } = this.state;
+
+      const { data, status } = await axios.post(
+        'http://localhost:8080/api/requests',
+        {
+          assigned_to,
+          date_approved,
+          tenant_comment,
+          tenant_cleanliness_rating,
+          tenant_work_rating,
+          issue_number
+        }
+      );
+
+      if (status === 200) {
+        this.setState({ showForm: false });
+        // Route to a different page
+        // hide the form and show that tennent data
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   render() {
@@ -88,66 +136,79 @@ export default class Login extends Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
           <br />
           1213 Venice Blvd., Los Angeles CA 90066
+          {this.state.issuesFromDB.length > 0 &&
+            this.state.issuesFromDB.map(issue => {
+              return (
+                <div>
+                  <br />
+                  Issue #{issue.id} {issue.issue_name}
+                </div>
+              );
+            })}
           <br />
-          Issue #1 feeds in here
+          {/* Issue #1 feeds in here
           <br />
           Issue #2 feeds in here
           <br />
           Issue #3 feeds in here
           <br />
           Issue #4 feeds in here
-          <br />
-          <div className="form-group">
-            <b>Tenant Comment</b>
-            {/* <br /> */}
-            <input
-              className="form-control"
-              type="text"
-              name="tenant_comment"
-              placeholder="Tenant Comment Here"
-              onChange={this.onChangeHandler}
-              value={this.state.tenant_comment}
-            />
-            <select
-              className="form-control4"
-              name="tenant_work_rating"
-              onChange={this.onChangeHandler}
-              value={this.state.tenant_work_rating}
-            >
-              <option value="">Work Rating</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-            <select
-              className="form-control4"
-              name="tenant_cleanliness_rating"
-              onChange={this.onChangeHandler}
-              value={this.state.tenant_cleanliness_rating}
-            >
-              <option value="">Cleanliness Rating</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-            <button className="btn btn-primary btn-block" type="submit">
-              Submit Request
-            </button>
-          </div>
+          <br /> */}
+          {this.state.showForm ? (
+            <div className="form-group">
+              <b>Tenant Comment</b>
+              {/* <br /> */}
+              <input
+                className="form-control"
+                type="text"
+                name="tenant_comment"
+                placeholder="Tenant Comment Here"
+                onChange={this.onChangeHandler}
+                value={this.state.tenant_comment}
+              />
+              <select
+                className="form-control4"
+                name="tenant_work_rating"
+                onChange={this.onChangeHandler}
+                value={this.state.tenant_work_rating}
+              >
+                <option value="">Work Rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <select
+                className="form-control4"
+                name="tenant_cleanliness_rating"
+                onChange={this.onChangeHandler}
+                value={this.state.tenant_cleanliness_rating}
+              >
+                <option value="">Cleanliness Rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <button className="btn btn-primary btn-block" type="submit">
+                Submit Request
+              </button>
+            </div>
+          ) : (
+            <h1>Your data has been posted to the db</h1>
+          )}
           <div className="form-group">
             <b>Manager Comment</b>
             <input

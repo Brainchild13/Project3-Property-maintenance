@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './styleReg.css';
 
 export default class Registration extends Component {
@@ -28,11 +29,40 @@ export default class Registration extends Component {
     this.setState({ [name]: value });
   };
 
-  onSubmitHandler = event => {
+  onSubmitHandler = async event => {
     event.preventDefault();
     console.log(this.state);
 
-    // axios post with state data
+    try {
+      const {
+        first_name,
+        last_name,
+        user_email,
+        password,
+        tenant_location,
+        tenant_unit_number
+      } = this.state;
+
+      const { data, status } = await axios.post(
+        'http://localhost:8080/api/users',
+        {
+          first_name,
+          last_name,
+          user_email,
+          password,
+          tenant_location,
+          tenant_unit_number
+        }
+      );
+
+      if (status === 200) {
+        this.setState({ showForm: false });
+        // Route to a different page
+        // hide the form and show that tennent data
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   render() {
