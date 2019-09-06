@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './styleReq.css';
 
 export default class RequestApp extends Component {
@@ -18,32 +19,93 @@ export default class RequestApp extends Component {
       closeup_image2: '',
       zoom_out_image2: '',
       zoom_out_image3: '',
-      zoom_out_image4: ''
+      zoom_out_image4: '',
+      showForm: true,
+      userInfoDB: []
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     // any data fetching from the db should be done here
     // const { data } = await axios.get('some/api/route');
     // this.setState({ issues: data.issues })
+
+    const fetchIssues = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:8080/api/users');
+
+        if (data) {
+          console.log(data);
+          this.setState({ userInfoDB: data });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchIssues();
   }
 
   onChangeHandler = event => {
     console.log(event.target.name);
     const { name, value } = event.target;
     this.setState({ [name]: value });
-
-    // this.setState({ ...this.state, [name]: event.target.value })
   };
 
-  onSubmitHandler = event => {
+  onSubmitHandler = async event => {
     event.preventDefault();
     console.log(this.state);
 
     // axios post with state data
+    try {
+      const {
+        item1_category,
+        item1,
+        item2_category,
+        item2,
+        item3_category,
+        item3,
+        item4_category,
+        item4,
+        closeup_image,
+        zoom_out_image,
+        closeup_image2,
+        zoom_out_image2,
+        zoom_out_image3,
+        zoom_out_image4
+      } = this.state;
+
+      const { data, status } = await axios.post(
+        'http://localhost:8080/api/requests',
+        {
+          item1_category,
+          item1,
+          item2_category,
+          item2,
+          item3_category,
+          item3,
+          item4_category,
+          item4,
+          closeup_image,
+          zoom_out_image,
+          closeup_image2,
+          zoom_out_image2,
+          zoom_out_image3,
+          zoom_out_image4
+        }
+      );
+
+      if (status === 200) {
+        this.setState({ showForm: false });
+        // Route to a different page
+        // hide the form and show that tennent data
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   render() {
