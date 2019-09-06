@@ -1,6 +1,6 @@
 // Retrieve all issue categories 8-19-19
 var db = require('../models');
-var cors = require('cors');
+// var cors = require('cors');
 
 module.exports = function(app) {
   app.get('/api/requests', function(req, res) {
@@ -19,8 +19,8 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/api/requests', cors(), function(req, res) {
-    db.Requests.create(req, body).then(function(dbRequests) {
+  app.post('/api/requests', function(req, res) {
+    db.Requests.create(req.body).then(function(dbRequests) {
       res.json(dbRequests);
     });
   });
