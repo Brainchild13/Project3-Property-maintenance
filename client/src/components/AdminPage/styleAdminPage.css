@@ -1,0 +1,51 @@
+.admin-form {
+  background: #f1f7fc;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  margin-top: 110px;
+}
+
+.header-clean-rating,
+.header-work-rating,
+.header-maint-man {
+  padding: 0 !important;
+  color: rgb(31, 138, 187);
+  font-weight: 500;
+}
+
+.header-clean-rating,
+.header-work-rating {
+  text-align: center;
+}
+
+.clean-rating,
+.work-rating {
+  text-align: center;
+  font-weight: 600;
+}
+
+.admin-form form {
+  max-width: 440px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding-top: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+  color: #505e6c;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.assignedto {
+  font-weight: 600;
+}
+
+.header-underline {
+  border-bottom: 1px solid rgb(31, 138, 187);
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  margin-left: -2px;
+  margin-right: -2px;
+}

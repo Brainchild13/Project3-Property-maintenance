@@ -69,7 +69,11 @@ export default class Login extends Component {
         tenant_comment,
         tenant_work_rating,
         tenant_cleanliness_rating,
-        issue_number
+        issue_number,
+        manager_comment,
+        manager_work_rating,
+        manager_cleanliness_rating,
+        completion_date
       } = this.state;
 
       const { data, status } = await axios.post(
@@ -80,7 +84,11 @@ export default class Login extends Component {
           tenant_comment,
           tenant_cleanliness_rating,
           tenant_work_rating,
-          issue_number
+          issue_number,
+          manager_comment,
+          manager_work_rating,
+          manager_cleanliness_rating,
+          completion_date
         }
       );
 
