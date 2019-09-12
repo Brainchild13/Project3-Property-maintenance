@@ -140,10 +140,11 @@ export default class Login extends Component {
               value={this.state.date_approved}
             />
           </div>
-          Tenant Name here
+          Jack Jones (tenant)
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit#
+          5
           <br />
-          1213 Venice Blvd., Los Angeles CA 90066
+          12517 Greene Ave., Los Angeles, CA 90064
           {this.state.issuesFromDB.length > 0 &&
             this.state.issuesFromDB.map(issue => {
               return (
@@ -153,14 +154,6 @@ export default class Login extends Component {
               );
             })}
           <br />
-          {/* Issue #1 feeds in here
-          <br />
-          Issue #2 feeds in here
-          <br />
-          Issue #3 feeds in here
-          <br />
-          Issue #4 feeds in here
-          <br /> */}
           {this.state.showForm ? (
             <div className="form-group">
               <b>Tenant Comment</b>
@@ -214,7 +207,7 @@ export default class Login extends Component {
               </button>
             </div>
           ) : (
-            <h1>Your data has been posted to the db</h1>
+            <h4>Your review has been submitted</h4>
           )}
           <div className="form-group">
             <b>Manager Comment</b>
