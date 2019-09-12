@@ -34,13 +34,24 @@ export default class Admin extends Component {
 
   render() {
     return (
-      <div className="admin-form">
+      <div className="admin-form form">
         <form onSubmit={this.onSubmitHandler}>
           <h2>Admin Page</h2>
           <div className="row header-underline">
-            <div className="col-sm-6 header-maint-man">Maintenance Man</div>
-            <div className="col-sm-3 header-clean-rating">Clean Rating</div>
-            <div className="col-sm-3 header-work-rating">Work Rating</div>
+            <div className="header-maint-man">
+              Maintenance
+              <br /> Man
+            </div>
+            <div className="header-clean-rating">
+              Clean
+              <br />
+              Rating
+            </div>
+            <div className="header-work-rating">
+              Work
+              <br />
+              Rating
+            </div>
           </div>
 
           {this.state.issuesFromDB.length > 0 &&
@@ -48,19 +59,17 @@ export default class Admin extends Component {
               return (
                 <div>
                   <div className="row">
-                    <div className="col-sm-6 assignedto">
-                      {issue.assigned_to}
-                    </div>
-                    <div className="col-sm-3 clean-rating">
+                    <div className="assignedto">{issue.assigned_to}</div>
+                    <div className="clean-rating">
                       {issue.manager_cleanliness_rating}
                     </div>
-                    <div className="col-sm-3 work-rating">
+                    <div className="work-rating">
                       {issue.manager_work_rating}
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-sm-5">WO# {issue.issue_number}</div>
-                    <div className="col-sm-7"></div>
+                    <div className="workorder">WO# {issue.issue_number}</div>
+                    <div className="items"></div>
                   </div>
                   <div>{issue.item1}</div>
                   <div>{issue.item2}</div>
