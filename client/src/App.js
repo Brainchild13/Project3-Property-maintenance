@@ -21,6 +21,7 @@ function App() {
         <Route exact path="/Request" component={RequestApp} />
         <Route exact path="/Issue" component={IssueForm} />
         <Route exact path="/AdminPage" component={AdminPage} />
+        {/* <Route exact path="/LoginReg" component={LoginReg} /> */}
       </Router>
       <Footer />
     </div>

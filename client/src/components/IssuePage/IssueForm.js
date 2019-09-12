@@ -147,8 +147,7 @@ export default class Login extends Component {
           {this.state.issuesFromDB.length > 0 &&
             this.state.issuesFromDB.map(issue => {
               return (
-                <div>
-                  <br />
+                <div className="issues">
                   Issue #{issue.id} {issue.issue_name}
                 </div>
               );

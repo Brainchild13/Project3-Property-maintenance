@@ -16,6 +16,7 @@
 .header-clean-rating,
 .header-work-rating {
   text-align: center;
+  width: 20%;
 }
 
 .clean-rating,
@@ -48,4 +49,31 @@
   padding-bottom: 3px;
   margin-left: -2px;
   margin-right: -2px;
+}
+
+/* @media (min-width: 467px) {
+  .header-underline {
+    position: fixed;
+  }
+} */
+
+.header-maint-man {
+  width: 60%;
+}
+
+.assignedto {
+  width: 56%;
+  margin-left: 12px;
+}
+
+.clean-rating,
+.work-rating {
+  text-align: center;
+  width: 19%;
+}
+
+.workorder,
+.items {
+  width: 100%;
+  margin-left: 12px;
 }

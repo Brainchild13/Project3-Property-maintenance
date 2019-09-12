@@ -1,0 +1,237 @@
+/* element.style {
+} */
+
+.login-clean1 {
+  background: #f1f7fc;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-top: 110px;
+}
+
+.login-clean1 form {
+  max-width: 440px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 4px;
+  color: #505e6c;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.login-clean1 .illustration {
+  text-align: center;
+  padding: 0 0 20px;
+  font-size: 100px;
+  color: rgb(244, 71, 107);
+}
+
+.login-clean1 form .form-control {
+  background: #f7f9fc;
+  width: 100%;
+  border: none;
+  border: 1px solid #d7ddff;
+  margin-top: 2px;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+}
+
+.login-clean1 form .btn-primary {
+  background: #f4476b;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 10px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* SIGN UP FORM */
+.sign-up1 {
+  background: #f1f7fc;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  /* margin-top: 110px; */
+}
+
+.sign-up1 form {
+  max-width: 440px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 4px;
+  color: #505e6c;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.sign-up1 .illustration {
+  text-align: center;
+  padding: 0 0 20px;
+  font-size: 100px;
+  color: rgb(244, 71, 107);
+}
+
+.sign-up1 form .form-control {
+  background: #f7f9fc;
+  margin-top: 2px;
+  width: 100%;
+  border: none;
+  /* border-bottom: 1px solid #d7ddff; */
+  border: 1px solid #d7ddff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+}
+
+.sign-up1 form .form-control2 {
+  background: #f7f9fc;
+  margin-top: 2px;
+  width: 50%;
+  border: none;
+  /* border-bottom: 1px solid #d7ddff; */
+  border: 1px solid #d7ddff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+}
+
+.sign-up1 form .form-control3 {
+  background: #f7f9fc;
+  width: 80%;
+  border: none;
+  margin-top: 2px;
+  /* border-bottom: 1px solid #d7ddff; */
+  border: 1px solid #d7ddff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 44px;
+}
+
+.sign-up1 form .form-control4 {
+  background: #f7f9fc;
+  width: 20%;
+  border: none;
+  /* border-bottom: 1px solid #d7ddff; */
+  margin-top: 2px;
+  border: 1px solid #d7ddff;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 44px;
+}
+
+.sign-up1 form .btn-primary {
+  background: #f4476b;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+/* .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-weight: 600;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  } */
+
+/* button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  } */
